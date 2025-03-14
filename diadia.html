@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Magnifique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #ff0000, #000000);
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 0, 0, 0.7);
+        }
+
+        .submenu {
+            display: none;
+            flex-direction: column;
+            padding-left: 20px;
+        }
+
+        .sidebar a.active + .submenu {
+            display: flex;
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 2rem;
+            color: #ff0000;
+        }
+
+        .recent-articles {
+            margin-top: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #ff0000;
+            color: white;
+        }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 12px;
+            background: black;
+            color: white;
+        }
+        .status a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-view {
+            padding: 8px 16px;
+            background: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>Sidy Diop</h2>
+
+        <a onclick="toggleMenu(this)">🏠 Dashboard ▼</a>
+        <div class="submenu">
+            <a href="#">Vue d'ensemble</a>
+            <a href="#">Statistiques</a>
+        </div>
+
+        <a onclick="toggleMenu(this)">📰 Articles ▼</a>
+        <div class="submenu">
+            <a href="#">Tous les articles</a>
+            <a href="#">Nouveau</a>
+        </div>
+
+        <a onclick="toggleMenu(this)">📚 Catégories ▼</a>
+        <div class="submenu">
+            <a href="#">Liste</a>
+            <a href="#">Créer</a>
+        </div>
+
+        <a href="#">✍️ Auteurs</a>
+
+        <a href="#">💬 Commentaires ▼</a>
+
+        <a onclick="toggleMenu(this)">📄 Pages ▼</a>
+        <div class="submenu">
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+        </div>
+
+        <a onclick="toggleMenu(this)">⚙️ Paramètres ▼</a>
+        <div class="submenu">
+            <a href="#">Profil</a>
+            <a href="#">Sécurité</a>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div class="topbar">
+            <h1>Bonjour, Sidy Diop!</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher ici">
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="card">
+                <h3>236</h3>
+                <p>Total Articles</p>
+            </div>
+
+            <div class="card">
+                <h3>10</h3>
+                <p>Total Catégories</p>
+            </div>
+
+            <div class="card">
+                <h3>1538</h3>
+                <p>Total Commentaires</p>
+            </div>
+
+            <div class="card">
+                <h3>364</h3>
+                <p>Abonnements</p>
+            </div>
+        </div>
+
+        <div class="recent-articles">
+            <h2>Articles récents</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Articles</th>
+                        <th>Image</th>
+                        <th>Titre</th>
+                        <th>Catégories</th>
+                        <th>Auteur</th>
+                        <th>Publication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ART-0001</td>
+                        <td>
+                        <td>Intelligence Artificielle</td>
+                        <td>Tech</td>
+                        <td>Sidy Diop</td>
+                        <td><span class="status"><a href="diarra.html">PUBLIÉ</a></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="#" class="btn-view">Voir tous</a>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+
+</body>
+
+</html>
