@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Paramètres - Magnifique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000, #8B0000);
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff0000;
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+            background: transparent;
+            color: white;
+        }
+
+        input:focus, textarea:focus {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background: #ff0000;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Parametres de basesa</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="site-name">Nom du site *</label>
+                    <input type="text" id="site-name" name="site-name" placeholder="Entrez le nom du site" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Numéro de téléphone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Entrez votre numéro">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Adresse</label>
+                    <input type
